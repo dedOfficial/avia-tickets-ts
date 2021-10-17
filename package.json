@@ -8,7 +8,7 @@
     "build": "webpack"
   },
   "keywords": [],
-  "author": "",
+  "author": "Konstantin K. karp_karpov981@mail.ru",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.5",
