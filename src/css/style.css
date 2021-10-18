@@ -1,0 +1,24 @@
+.d-flex { display: flex; }
+.align-items-center { align-items: center; }
+.justify-items-center { justify-items: center; }
+.ml-auto { margin-left: auto; }
+.mr-auto { margin-right: auto; }
+.mx-auto { margin: 0 auto 0 auto; }
+
+/* Header Style */
+.header .brand-logo { position: static; font-size: 1.5rem; }
+
+.header .currency-select { width: 120px; }
+
+.header .currency-select input.select-dropdown { margin: 0; color: #fff; border-bottom: none; }
+.header .currency-select input.select-dropdown:focus { border-bottom: none; }
+
+.header .currency-select .caret { fill: #fff; }
+
+/* Form style */
+.form-section .card-content .input-field input.autocomplete:focus, 
+.form-section .card-content .input-field input.datepicker:focus { border-bottom-color: #8e24aa; box-shadow: 0 1px 0 0 #8e24aa;}
+
+.form-section .card-content .input-field .datepicker-date-display { background-color: #7b1fa2; }
+
+.form-section .card-content .input-field button.btn-flat:not(.datepicker-clear) { color: #6a1b9a; }
