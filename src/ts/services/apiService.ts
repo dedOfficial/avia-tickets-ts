@@ -27,7 +27,7 @@ interface IAviaTickets {
  * /cities -> array of cities
  * /prices/cheap -> array of accessible flights
  */
-class Api implements IAviaTickets {
+export class Api implements IAviaTickets {
   private url: string;
 
   constructor(config: TConfig) {
