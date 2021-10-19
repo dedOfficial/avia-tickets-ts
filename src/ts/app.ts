@@ -5,15 +5,46 @@ import locations from './store/locations';
 import formUI from './views/form';
 import currencyUI from './views/currency';
 import ticketsUI from './views/tickets';
+import favorites from './store/favorite';
 
 document.addEventListener('DOMContentLoaded', () => {
   initApp();
   const form = formUI.form;
+  const ticketsContainer = <HTMLElement>ticketsUI.container;
+  const favoriteContainer = <HTMLElement>favorites.container;
 
   // Events
   form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
     onFormSubmit();
+  });
+
+  ticketsContainer.addEventListener('click', (e) => {
+    e.preventDefault();
+    const t = <HTMLElement>e.target;
+    if (t && t.matches('a.btn-small')) {
+      const departure_at = t.getAttribute('data-departure-date');
+      const ticket = locations.lastSearch.filter(
+        (item: any) => item.departure_at === departure_at
+      )[0];
+      favorites.addTicketToFavorite(<never>ticket);
+    }
+
+    favorites.renderTickets(favorites.tickets);
+  });
+
+  favoriteContainer.addEventListener('click', (e) => {
+    e.preventDefault();
+    const t = <HTMLElement>e.target;
+    if (t && t.matches('a.btn-small')) {
+      const departure_at = t.getAttribute('data-departure-date');
+      const ticket = locations.lastSearch.filter(
+        (item: any) => item.departure_at === departure_at
+      )[0];
+      favorites.removeTicketFromFavorite(ticket);
+    }
+
+    favorites.renderTickets(favorites.tickets);
   });
 
   // Handlers
@@ -30,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const return_date = formUI.returnDateValue;
     const currency = currencyUI.currencyValue;
     // CODE, CODE, 2021-10, 2021-11
-    console.log(origin, destination, depart_date, return_date);
     await locations.fetchTickets({
       origin,
       destination,
@@ -38,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return_date,
       currency,
     });
-
     ticketsUI.renderTickets(locations.lastSearch);
   }
 });
