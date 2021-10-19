@@ -34,7 +34,7 @@ export class Api implements IAviaTickets {
     this.url = config.url;
   }
 
-  protected async getData(url: string, params: any) {
+  protected async getData(url: string, params?: any) {
     try {
       const response = await axios.get(url, params);
       return response.data;
@@ -53,6 +53,10 @@ export class Api implements IAviaTickets {
 
   async prices(params: any) {
     return await this.getData(`${this.url}/prices/cheap`, { params });
+  }
+
+  async airlines() {
+    return await this.getData(`${this.url}/airlines`);
   }
 }
 

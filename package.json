@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "axios": "^0.23.0",
+    "date-fns": "^2.25.0",
     "materialize-css": "^1.0.0-rc.2"
   }
 }

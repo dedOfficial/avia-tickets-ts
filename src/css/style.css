@@ -1,24 +1,114 @@
-.d-flex { display: flex; }
-.align-items-center { align-items: center; }
-.justify-items-center { justify-items: center; }
-.ml-auto { margin-left: auto; }
-.mr-auto { margin-right: auto; }
-.mx-auto { margin: 0 auto 0 auto; }
+.d-flex {
+  display: flex;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-items-center {
+  justify-items: center;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.mx-auto {
+  margin: 0 auto 0 auto;
+}
 
 /* Header Style */
-.header .brand-logo { position: static; font-size: 1.5rem; }
+.header .brand-logo {
+  position: static;
+  font-size: 1.5rem;
+}
 
-.header .currency-select { width: 120px; }
+.header .currency-select {
+  width: 120px;
+}
 
-.header .currency-select input.select-dropdown { margin: 0; color: #fff; border-bottom: none; }
-.header .currency-select input.select-dropdown:focus { border-bottom: none; }
+.header .currency-select input.select-dropdown {
+  margin: 0;
+  color: #fff;
+  border-bottom: none;
+}
+.header .currency-select input.select-dropdown:focus {
+  border-bottom: none;
+}
 
-.header .currency-select .caret { fill: #fff; }
+.header .currency-select .caret {
+  fill: #fff;
+}
 
 /* Form style */
-.form-section .card-content .input-field input.autocomplete:focus, 
-.form-section .card-content .input-field input.datepicker:focus { border-bottom-color: #8e24aa; box-shadow: 0 1px 0 0 #8e24aa;}
+.form-section .card-content .input-field input.autocomplete:focus,
+.form-section .card-content .input-field input.datepicker:focus {
+  border-bottom-color: #8e24aa;
+  box-shadow: 0 1px 0 0 #8e24aa;
+}
 
-.form-section .card-content .input-field .datepicker-date-display { background-color: #7b1fa2; }
+.form-section .card-content .input-field .datepicker-date-display {
+  background-color: #7b1fa2;
+}
 
-.form-section .card-content .input-field button.btn-flat:not(.datepicker-clear) { color: #6a1b9a; }
+.form-section
+  .card-content
+  .input-field
+  button.btn-flat:not(.datepicker-clear) {
+  color: #6a1b9a;
+}
+
+/* Ticket Style */
+.ticket-card {
+  padding: 10px 15px;
+}
+
+.ticket-airline-name {
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.ticket-airline-img {
+  max-width: 100px;
+  margin-right: 20px;
+}
+
+.ticket-destination {
+  margin-bottom: 10px;
+  border-bottom: 1px dashed gray;
+}
+
+.ticket-destination .ticket-city {
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+.ticket-destination i.material-icons {
+  font-size: 26px;
+}
+
+.ticket-time-departure {
+  font-weight: bold;
+  color: gray;
+}
+
+.ticket-price {
+  font-size: 25px;
+  padding: 5px;
+  background: #6a1b9a;
+  color: #fff;
+}
+
+.ticket-additional-info {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.tickets-empty-res-msg {
+  padding: 10px 15px;
+  text-align: center;
+  background: whitesmoke;
+  font-weight: bold;
+  font-size: 18px;
+}
