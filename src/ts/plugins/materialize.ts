@@ -1,5 +1,5 @@
 import 'materialize-css/dist/css/materialize.min.css';
-import 'materialize-css/dist/js/materialize.min.js';
+import M from 'materialize-css';
 
 // Init dropdown
 const dropdowns = document.querySelectorAll('.dropdown-trigger');
@@ -11,7 +11,7 @@ const select = document.querySelectorAll('select');
 M.FormSelect.init(select);
 
 export function getSelectInstance(DOMelem: Element) {
-  return M.FromSelect.getInstance(DOMelem);
+  return M.FormSelect.getInstance(DOMelem);
 }
 
 // Init autocomplete

@@ -20,6 +20,7 @@ interface IAviaTickets {
   countries(): Promise<unknown>;
   cities(): Promise<unknown>;
   prices(params: any): void;
+  airlines(): Promise<unknown>;
 }
 
 /**

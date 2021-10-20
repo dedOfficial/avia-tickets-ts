@@ -1,4 +1,4 @@
-class CurrencyUI {
+export class CurrencyUI {
   currency: HTMLInputElement;
   dictionary: { USD: string; EUR: string; [k: string]: string };
   constructor() {

@@ -5,13 +5,14 @@ import locations from './store/locations';
 import formUI from './views/form';
 import currencyUI from './views/currency';
 import ticketsUI from './views/tickets';
+import favoriteUI from './views/favoriteTickets';
 import favorites from './store/favorite';
 
 document.addEventListener('DOMContentLoaded', () => {
   initApp();
   const form = formUI.form;
   const ticketsContainer = <HTMLElement>ticketsUI.container;
-  const favoriteContainer = <HTMLElement>favorites.container;
+  const favoriteContainer = <HTMLElement>favoriteUI.container;
 
   // Events
   form.addEventListener('submit', (e: Event) => {
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       favorites.addTicketToFavorite(<never>ticket);
     }
 
-    favorites.renderTickets(favorites.tickets);
+    favoriteUI.renderTickets(favorites.tickets);
   });
 
   favoriteContainer.addEventListener('click', (e) => {
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       favorites.removeTicketFromFavorite(ticket);
     }
 
-    favorites.renderTickets(favorites.tickets);
+    favoriteUI.renderTickets(favorites.tickets);
   });
 
   // Handlers

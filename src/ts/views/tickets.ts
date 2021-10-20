@@ -1,6 +1,6 @@
 import currencyUI from './currency';
 
-class TicketsUI {
+export class TicketsUI {
   container: any;
   getCurrencySymbol: Function;
 
@@ -21,7 +21,7 @@ class TicketsUI {
     const currency = this.getCurrencySymbol();
 
     tickets.forEach((ticket: any) => {
-      const template = TicketsUI.ticketTemplate(ticket, currency);
+      const template = this.ticketTemplate(ticket, currency);
       fragment += template;
     });
 
@@ -45,7 +45,7 @@ class TicketsUI {
     `;
   }
 
-  static ticketTemplate(ticket: any, currency: any) {
+  protected ticketTemplate(ticket: any, currency: string) {
     return `
       <div class="col s12 m6">
         <div class="card ticket-card">
