@@ -1,4 +1,10 @@
-class Favorite {
+interface IFavorite {
+  tickets: any[];
+  addTicketToFavorite(ticket: any): void;
+  removeTicketFromFavorite(ticket: any): void;
+}
+
+class Favorite implements IFavorite {
   tickets: any[] = [];
 
   addTicketToFavorite(ticket: any) {
