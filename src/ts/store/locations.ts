@@ -49,7 +49,6 @@ export class Locations {
   getAirlineNameByCode(code: string) {
     return this.airlines[code] ? this.airlines[code].name : '';
   }
-  Moscow;
 
   getAirlineLogoByCode(code: string) {
     return this.airlines[code] ? this.airlines[code].logo : '';
