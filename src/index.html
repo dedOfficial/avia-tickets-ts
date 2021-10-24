@@ -33,7 +33,10 @@
 
           <ul id="nav-mobile" class="right hide-on-med-and-down ml-auto">
             <li
-              ><div class="input-field currency-select">
+              ><div
+                class="input-field currency-select"
+                data-hook="currencySelect"
+              >
                 <select id="currency">
                   <option value="USD">$ US Dollar</option>
                   <option value="EUR">€ ES Euro</option>
@@ -60,6 +63,7 @@
                       type="text"
                       id="autocomplete-origin"
                       class="autocomplete"
+                      data-hook="autocompleteOrigin"
                     />
                     <label for="autocomplete-origin">Origin</label>
                   </div>
@@ -69,24 +73,27 @@
                       type="text"
                       id="autocomplete-destination"
                       class="autocomplete"
+                      data-hook="autocompleteDestination"
                     />
                     <label for="autocomplete-destination">Destination</label>
                   </div>
 
-                  <div class="input-field">
+                  <div class="input-field" data-hook="datepickerDepartWrap">
                     <input
                       type="text"
                       class="datepicker"
                       id="datepicker-depart"
+                      data-hook="datepickerDepartInput"
                     />
                     <label for="datepicker-depart">Depart date</label>
                   </div>
 
-                  <div class="input-field">
+                  <div class="input-field" data-hook="datepickerReturnWrap">
                     <input
                       type="text"
                       class="datepicker"
                       id="datepicker-return"
+                      data-hook="datepickerReturnInput"
                     />
                     <label for="datepicker-return">Return date</label>
                   </div>
