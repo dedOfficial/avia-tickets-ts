@@ -41,6 +41,9 @@
 # *.iml
 # *.ipr
 
+# Firebase hosting cache
+.firebase
+
 # CMake
 cmake-build-*/
 
