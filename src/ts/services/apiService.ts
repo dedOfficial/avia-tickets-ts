@@ -4,18 +4,6 @@ import config, { TConfig } from '../config/apiConfig';
 type THeaders = {
   [key: string]: string;
 };
-
-// type TData = {
-//   data: [{ [k: string]: any }];
-//   status: number;
-//   statusText: string;
-//   headers: THeaders;
-//   config: { url: string; method: string; headers: THeaders };
-//   request: { [k: string]: any };
-// };
-
-// type TData = [{ [k: string]: any }];
-
 interface IAviaTickets {
   countries(): Promise<unknown>;
   cities(): Promise<unknown>;

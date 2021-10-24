@@ -1,7 +1,7 @@
 import api, { Api } from '../services/apiService';
 import { formatDate } from '../helpers/date';
 
-class Locations {
+export class Locations {
   api: Api;
   countries: any;
   cities: any;
@@ -31,7 +31,6 @@ class Locations {
     this.cities = this.serializeCities(cities);
     this.shortCitiesList = this.createShortCitiesList(this.cities);
     this.airlines = this.serializeAirlines(airlines);
-    console.log(this.airlines);
 
     return res;
   }
@@ -50,6 +49,7 @@ class Locations {
   getAirlineNameByCode(code: string) {
     return this.airlines[code] ? this.airlines[code].name : '';
   }
+  Moscow;
 
   getAirlineLogoByCode(code: string) {
     return this.airlines[code] ? this.airlines[code].logo : '';
@@ -66,11 +66,14 @@ class Locations {
   }
 
   serializeAirlines(airlines: any) {
+    if (!Array.isArray(airlines) || !airlines.length) return {};
+
     return airlines.reduce(
       (acc: { [k: string]: any }, item: { code: string; [k: string]: any }) => {
-        item.logo = `http://pics.avs.io/200/200/${item.code}.png`;
-        item.name = item.name || item.name_translations.en;
-        acc[item.code] = item;
+        const itemCopy = { ...item };
+        itemCopy.logo = `http://pics.avs.io/200/200/${item.code}.png`;
+        itemCopy.name = itemCopy.name || itemCopy.name_translations.en;
+        acc[itemCopy.code] = itemCopy;
         return acc;
       },
       {}
@@ -79,6 +82,7 @@ class Locations {
 
   serializeCountries(countries: any) {
     // { 'Country code': { ... } }
+    if (!Array.isArray(countries) || !countries.length) return {};
 
     return countries.reduce(
       (
@@ -94,6 +98,8 @@ class Locations {
 
   serializeCities(cities: any) {
     // { 'City name, Country name': null }
+    if (!Array.isArray(cities) || !cities.length) return {};
+
     return cities.reduce(
       (acc: { [k: string]: any }, city: { name: string; [k: string]: any }) => {
         const country_name = this.getCountryNameByCityCode(city.country_code);
@@ -117,7 +123,6 @@ class Locations {
   async fetchTickets(params: any) {
     const response: any = await this.api.prices(params);
     this.lastSearch = this.serializeTickets(response.data);
-    console.log(this.lastSearch);
   }
 
   serializeTickets(tickets: any) {
